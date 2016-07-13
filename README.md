@@ -13,7 +13,6 @@
    ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/002.jpg) 
    ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/003.jpg) 
    ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/004.jpg) 
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/005.jpg) 
   
 ### APK下载地址
   
