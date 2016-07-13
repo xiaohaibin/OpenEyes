@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/AndroidStudioCode/trunk/vitamio/src/main/assets"/></dataSet><dataSet config="release"><source path="/AndroidStudioCode/trunk/vitamio/src/release/assets"/></dataSet></merger>

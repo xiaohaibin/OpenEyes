@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/AndroidStudioCode/trunk/F:\\AndroidStudiocode\\trunk\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\libarm.so",
+        "source": "/AndroidStudioCode/trunk/F:\\AndroidStudiocode\\trunk\\vitamio\\build\\intermediates\\bundles\\debug\\res\\raw\\libarm.so"
+    },
+    {
+        "merged": "/AndroidStudioCode/trunk/vitamio/build/intermediates/res/merged/androidTest/debug/raw/libarm.so",
+        "source": "/AndroidStudioCode/trunk/vitamio/build/intermediates/bundles/debug/res/raw/libarm.so"
+    }
+]

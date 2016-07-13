@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.stx.openeyes.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.stx.openeyes.view.CustomTextView
+            android:id="@+id/main_toolbar_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today" />
+        <com.stx.openeyes.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:layout_gravity="center"
+            android:text="Eyepetizer"/>
+        <ImageButton
+            android:id="@+id/main_toolbar_iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:src="@drawable/main_toolbar_eye_selector"/>
+    </android.support.v7.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorGray"
+        android:layout_height="0.5dp"/>
+    <LinearLayout
+        android:id="@+id/main_ll_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"></LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/main_rgp_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="每日精选"
+            android:textColor="@drawable/main_menu_selector" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:background="@color/colorGray" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="发现更多"
+            android:textColor="@drawable/main_menu_selector" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:background="@color/colorGray" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="热门排行"
+            android:textColor="@drawable/main_menu_selector" />
+    </RadioGroup>
+</LinearLayout>
