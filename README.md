@@ -9,16 +9,15 @@
 
 ### 效果图
   
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/001.jpg) 
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/002.jpg) 
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/003.jpg) 
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/004.jpg) 
-   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/005.jpg) 
+   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/001.jpg =360x640) 
+   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/002.jpg =360x640) 
+   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/003.jpg =360x640) 
+   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/004.jpg =360x640) 
+   ![ABC](https://github.com/xiaohaibin/OpenEyes/blob/master/screenshots/005.jpg =360x640) 
   
 ### APK下载地址
   
-  [豌豆荚下载地址](http://www.wandoujia.com/apps/com.stx.xhb.dmgameapp)
-  [腾讯应用宝下载地址](http://android.myapp.com/myapp/detail.htm?apkName=com.stx.xhb.dmgameapp)
+  [下载地址](http://fir.im/pr7h)
     
 ### 技术要点  
   
