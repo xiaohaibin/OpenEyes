@@ -104,7 +104,7 @@ public class VideoDetailActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.video_paly://播放
                 if (NetConnectedUtils.isNetConnected(this)) {
-                    Intent intent=new Intent(this,showVideoActivity.class);
+                    Intent intent=new Intent(this,ShowVideoActivity.class);
                     Bundle bundle=new Bundle();
                     bundle.putString("video",video);
                     bundle.putString("title",title);

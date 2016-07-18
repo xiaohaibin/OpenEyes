@@ -36,7 +36,7 @@ import butterknife.ButterKnife;
 /**
  * 发现更多 通用fragment
  */
-public class Common_find_Fragment extends Fragment {
+public class CommonFindFragment extends Fragment {
 
 
     @Bind(R.id.find_listview)
@@ -48,7 +48,7 @@ public class Common_find_Fragment extends Fragment {
     private CommonAdapter<FindDetailEntity.ItemListEntity> adapter;
     private View footview;
 
-    public Common_find_Fragment() {
+    public CommonFindFragment() {
     }
 
     @Override

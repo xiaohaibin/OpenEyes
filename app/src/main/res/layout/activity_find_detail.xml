@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.stx.openeyes.view.activity.Find_detail_Activity">
+    tools:context=".view.activity.FindDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

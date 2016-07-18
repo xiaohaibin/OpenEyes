@@ -22,7 +22,7 @@ import com.stx.openeyes.utils.CommonAdapter;
 import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.utils.JsonParseUtils;
 import com.stx.openeyes.utils.ViewHolder;
-import com.stx.openeyes.view.activity.Find_detail_Activity;
+import com.stx.openeyes.view.activity.FindDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,7 @@ public class FindFragment extends Fragment {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     FindMoreEntity entity = dataEntities.get(position);
-                    Intent intent=new Intent(getContext(),Find_detail_Activity.class);
+                    Intent intent=new Intent(getContext(),FindDetailActivity.class);
                     intent.putExtra("name",entity.getName());
                     startActivity(intent);
                 }

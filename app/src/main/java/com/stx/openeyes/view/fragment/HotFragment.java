@@ -57,7 +57,7 @@ public class HotFragment extends Fragment {
     private void initData() {
         //循环创建三个布局
         for (int i = 0; i < TITLE.length; i++) {
-            common_hot_fragment commonHotFragment = new common_hot_fragment();
+            CommonHotFragment commonHotFragment = new CommonHotFragment();
             fragments.add(commonHotFragment);
         }
         hotViewpager.setOffscreenPageLimit(3);

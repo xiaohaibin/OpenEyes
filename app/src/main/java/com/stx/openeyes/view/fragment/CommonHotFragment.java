@@ -35,7 +35,7 @@ import butterknife.ButterKnife;
 /**
  * 热门排行的通用fragment
  */
-public class common_hot_fragment extends Fragment {
+public class CommonHotFragment extends Fragment {
 
     private List<HotStraetgyEntity.ItemListEntity> itemListEntities = new ArrayList<>();
     @Bind(R.id.hot_listview)
@@ -45,7 +45,7 @@ public class common_hot_fragment extends Fragment {
             "weekly", "monthly", "historical"
     };
 
-    public common_hot_fragment() {
+    public CommonHotFragment() {
     }
 
 

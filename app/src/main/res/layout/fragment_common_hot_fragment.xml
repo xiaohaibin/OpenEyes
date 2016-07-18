@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.stx.openeyes.view.fragment.common_hot_fragment">
+    tools:context=".view.fragment.CommonHotFragment">
     <ListView
         android:id="@+id/hot_listview"
         android:scrollbars="none"

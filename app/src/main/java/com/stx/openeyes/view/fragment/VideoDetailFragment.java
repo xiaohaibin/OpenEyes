@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 /**
  * 视频详情
  */
-public class Video_detail_Fragment extends Fragment {
+public class VideoDetailFragment extends Fragment {
 
   /*  @Bind(R.id.video_detail_iv)
     SimpleDraweeView videoDetailIv;
@@ -44,7 +44,7 @@ public class Video_detail_Fragment extends Fragment {
     @Bind(R.id.video_detail_tv_down)
     TextView videoDetailTvDown;*/
 
-    public Video_detail_Fragment() {
+    public VideoDetailFragment() {
     }
 
     @Override

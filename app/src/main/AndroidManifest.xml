@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.showVideoActivity"
+            android:name=".view.activity.ShowVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" />
@@ -53,7 +53,7 @@
         </receiver>
 
         <activity android:name=".view.activity.VideoDetailActivity" />
-        <activity android:name=".view.activity.Find_detail_Activity"></activity>
+        <activity android:name=".view.activity.FindDetailActivity"></activity>
     </application>
 
 </manifest>

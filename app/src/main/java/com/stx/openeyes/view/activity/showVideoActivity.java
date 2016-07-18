@@ -21,7 +21,7 @@ import io.vov.vitamio.widget.VideoView;
 /**
  * 视频播放界面
  */
-public class showVideoActivity extends AppCompatActivity implements MediaPlayer.OnInfoListener, MediaPlayer.OnBufferingUpdateListener {
+public class ShowVideoActivity extends AppCompatActivity implements MediaPlayer.OnInfoListener, MediaPlayer.OnBufferingUpdateListener {
 
     private Uri uri;
     private ProgressBar pb;
@@ -36,7 +36,7 @@ public class showVideoActivity extends AppCompatActivity implements MediaPlayer.
         //定义全屏参数
         int flag = WindowManager.LayoutParams.FLAG_FULLSCREEN;
         //获得当前窗体对象
-        Window window = showVideoActivity.this.getWindow();
+        Window window = ShowVideoActivity.this.getWindow();
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
         //必须写这个，初始化加载库文件

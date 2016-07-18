@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.stx.openeyes.view.fragment.Video_detail_Fragment;
+import com.stx.openeyes.view.fragment.VideoDetailFragment;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import java.util.List;
  * 视频详情适配器
  */
 public class VideoPagerAdapter extends FragmentStatePagerAdapter {
-    private List<Video_detail_Fragment> fragments;
+    private List<VideoDetailFragment> fragments;
 
-    public VideoPagerAdapter(FragmentManager fm, List<Video_detail_Fragment> fragments) {
+    public VideoPagerAdapter(FragmentManager fm, List<VideoDetailFragment> fragments) {
         super(fm);
         this.fragments = fragments;
     }

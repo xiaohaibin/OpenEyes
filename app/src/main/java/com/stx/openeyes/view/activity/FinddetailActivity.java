@@ -14,7 +14,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.stx.openeyes.R;
-import com.stx.openeyes.view.fragment.Common_find_Fragment;
+import com.stx.openeyes.view.fragment.CommonFindFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ import butterknife.OnClick;
 /**
  * 发现详情分类界面
  */
-public class Find_detail_Activity extends AppCompatActivity {
+public class FindDetailActivity extends AppCompatActivity {
     //标题
     private static final String[] TITLE = new String[]{"按时间排序", "分享排行"};
     private static  final String[] RANK=new String[]{"date","shareCount"};
@@ -64,7 +64,7 @@ public class Find_detail_Activity extends AppCompatActivity {
     private void initData() {
         //创建两个通用fragment
         for (int i = 0; i < TITLE.length; i++) {
-            Common_find_Fragment commonFindFragment = new Common_find_Fragment();
+            CommonFindFragment commonFindFragment = new CommonFindFragment();
             fragments.add(commonFindFragment);
         }
     }
@@ -82,8 +82,8 @@ public class Find_detail_Activity extends AppCompatActivity {
         });
         //实例化适配器
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add(FragmentPagerItem.of(TITLE[0], Common_find_Fragment.class, bundle))
-                .add(FragmentPagerItem.of(TITLE[1],Common_find_Fragment.class,bundle))
+                .add(FragmentPagerItem.of(TITLE[0], CommonFindFragment.class, bundle))
+                .add(FragmentPagerItem.of(TITLE[1],CommonFindFragment.class,bundle))
                 .create());
         //设置适配器
         findDetailViewpager.setAdapter(adapter);
