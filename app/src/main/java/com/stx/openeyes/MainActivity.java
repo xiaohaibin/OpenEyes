@@ -9,8 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.stx.openeyes.utils.ToastUtil;
 import com.stx.openeyes.view.CustomTextView;
@@ -21,6 +21,7 @@ import com.stx.openeyes.view.fragment.HotFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 主界面
@@ -28,12 +29,18 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.main_toolbar)
     Toolbar mainToolbar;
-    @Bind(R.id.main_rgp_menu)
-    RadioGroup mainRgpMenu;
     @Bind(R.id.main_toolbar_tv_time)
     CustomTextView mainToolbarTvTime;
     @Bind(R.id.main_toolbar_iv_right)
     ImageButton mainToolbarIvRight;
+    @Bind(R.id.tv_daily)
+    TextView tvDaily;
+    @Bind(R.id.tv_find)
+    TextView tvFind;
+    @Bind(R.id.tv_hot)
+    TextView tvHot;
+    @Bind(R.id.main_menu)
+    LinearLayout mainMenu;
     private FragmentTransaction transaction;
     private FindFragment findFragment;
     private HotFragment hotFragment;
@@ -60,21 +67,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);//设置不显示标题
         mainToolbar.setNavigationIcon(R.drawable.ic_action_menu);
         //设置默认第一个菜单按钮为选中状态
-        RadioButton rb = (RadioButton) mainRgpMenu.getChildAt(0);
-        rb.setChecked(true);
         setChocie(1);
     }
 
 
     //设置事件监听
     private void setListener() {
-        //底部菜单栏的事件监听
-        mainRgpMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                setChocie(checkedId);
-            }
-        });
 
         mainToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,10 +94,12 @@ public class MainActivity extends AppCompatActivity {
 
         transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
+        clearChioce();
         switch (currenItem) {
             case 1://每日精选
                 mainToolbarTvTime.setVisibility(View.VISIBLE);
                 mainToolbarIvRight.setImageResource(R.drawable.main_toolbar_eye_selector);
+                tvDaily.setTextColor(getResources().getColor(R.color.colorBlack));
                 if (dailyFragment == null) {
                     dailyFragment = new DailyFragment();
                     transaction.add(R.id.main_ll_fragment, dailyFragment);
@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             case 2://发现更多
                 mainToolbarIvRight.setImageResource(R.drawable.ic_action_search);
                 mainToolbarTvTime.setVisibility(View.GONE);
+                tvFind.setTextColor(getResources().getColor(R.color.colorBlack));
                 if (findFragment == null) {
                     findFragment = new FindFragment();
                     transaction.add(R.id.main_ll_fragment, findFragment);
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             case 3://热门排行
                 mainToolbarIvRight.setImageResource(R.drawable.main_toolbar_eye_selector);
                 mainToolbarTvTime.setVisibility(View.GONE);
+                tvHot.setTextColor(getResources().getColor(R.color.colorBlack));
                 if (hotFragment == null) {
                     hotFragment = new HotFragment();
                     transaction.add(R.id.main_ll_fragment, hotFragment);
@@ -150,6 +152,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 重置所有选项
+     */
+    private void clearChioce() {
+        //还原默认选项
+        tvDaily.setTextColor(getResources().getColor(R.color.colorGray));
+        tvFind.setTextColor(getResources().getColor(R.color.colorGray));
+        tvHot.setTextColor(getResources().getColor(R.color.colorGray));
+
+    }
+
     // 按两次退出程序
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -165,4 +178,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @OnClick({R.id.tv_daily, R.id.tv_find, R.id.tv_hot})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_daily:
+                setChocie(1);
+                break;
+            case R.id.tv_find:
+                setChocie(2);
+                break;
+            case R.id.tv_hot:
+                setChocie(3);
+                break;
+        }
+    }
 }
