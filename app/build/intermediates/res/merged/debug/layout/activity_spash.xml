@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/landing_background"
+    tools:context="com.stx.openeyes.view.activity.SpashActivity">
+    <ImageView
+        android:id="@+id/splash_iv"
+        android:layout_width="61dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_action_focus_white_no_margin"/>
+    <com.stx.openeyes.view.CustomTextView
+        android:id="@+id/spash_tv_english"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/splash_iv"
+        android:textSize="25sp"
+        android:text="Eyepetizer"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/spash_tv_english"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:text="开  眼"/>
+    <com.stx.openeyes.view.CustomTextView
+        android:id="@+id/spash_tv_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="16dp"
+        android:text="Daily appetizers for your eyes，Bon eyepetit"
+        android:layout_above="@+id/textView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:text="每日精选视频推介，让你大开眼界。"
+        android:layout_marginBottom="46dp"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

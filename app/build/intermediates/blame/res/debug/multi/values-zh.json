@@ -1,0 +1,197 @@
+[
+    {
+        "outputFile": "/AndroidStudioCode/OpenEyes/app/build/intermediates/res/merged/debug/values-zh/values-zh.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 41,
+                    "endOffset": 92
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/src/main/res/values-zh/strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 41,
+                        "endOffset": 92
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 97,
+                    "endColumn": 52,
+                    "endOffset": 145
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 187,
+                        "endColumn": 52,
+                        "endOffset": 235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 150,
+                    "endColumn": 55,
+                    "endOffset": 201
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 240,
+                        "endColumn": 55,
+                        "endOffset": 291
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 206,
+                    "endColumn": 54,
+                    "endOffset": 256
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 296,
+                        "endColumn": 54,
+                        "endOffset": 346
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 261,
+                    "endColumn": 49,
+                    "endOffset": 306
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 351,
+                        "endColumn": 49,
+                        "endOffset": 396
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 311,
+                    "endColumn": 62,
+                    "endOffset": 369
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 401,
+                        "endColumn": 62,
+                        "endOffset": 459
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 374,
+                    "endColumn": 59,
+                    "endOffset": 429
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 464,
+                        "endColumn": 59,
+                        "endOffset": 519
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 434,
+                    "endColumn": 54,
+                    "endOffset": 484
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 524,
+                        "endColumn": 54,
+                        "endOffset": 574
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 489,
+                    "endColumn": 60,
+                    "endOffset": 545
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 579,
+                        "endColumn": 60,
+                        "endOffset": 635
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 550,
+                    "endColumn": 53,
+                    "endOffset": 599
+                },
+                "from": {
+                    "file": "/AndroidStudioCode/OpenEyes/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/values-zh/values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 640,
+                        "endColumn": 53,
+                        "endOffset": 689
+                    }
+                }
+            }
+        ]
+    }
+]

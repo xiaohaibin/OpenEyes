@@ -1,0 +1,19 @@
+<in.srain.cube.views.ptr.PtrClassicFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ptr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.stx.openeyes.view.fragment.DailyFragment">
+    
+    <ListView
+        android:id="@+id/lv_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:divider="@null"
+        android:focusable="false">
+
+    </ListView>
+
+</in.srain.cube.views.ptr.PtrClassicFrameLayout>

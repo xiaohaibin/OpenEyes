@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private DailyFragment dailyFragment;
     private FragmentManager fragmentManager;
     private long mExitTime = 0;
-    private String Menutitle;//首页toolbar的标题
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
     //初始化界面
     private void initView() {
-
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);//设置不显示标题

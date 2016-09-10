@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/OpenEyes.iml" filepath="$PROJECT_DIR$/OpenEyes.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/trunk.iml" filepath="$PROJECT_DIR$/trunk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vitamio/vitamio.iml" filepath="$PROJECT_DIR$/vitamio/vitamio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vitamio2/vitamio2.iml" filepath="$PROJECT_DIR$/vitamio2/vitamio2.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.ogaclejapan.smarttablayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="15"
+    android:versionName="1.6.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="22" />
+
+</manifest>
