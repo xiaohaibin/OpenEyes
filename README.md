@@ -1,9 +1,9 @@
-# OpenEyes
+#OpenEyes
 仿照[开眼视频]客户端做的一个App，每天更新一个精美短视频应用，一个非常美的视频应用，界面基本上是参照开眼视频官方版本来做的。
 在该项目中，我采用的是Vitamio的视频播放器框架，还是比较强大的，亲测，与开眼官方版本的视频播放器加载速度要快一些。
 在我的github和简书博客上都有Vitamio的教程，传送门[VitamioDemo地址](https://github.com/xiaohaibin/VitamioDemo)
   
-###主要分为三大板块：
+### 主要分为三大板块：
   
   【每日精选】
   【发现更多】
@@ -40,11 +40,11 @@
 
 [个人博客](http://blog.csdn.net/jxnk25)
 
-##如果觉得文章帮到你，不求打赏，喜欢我的文章可以关注我的微信公众号，将会定期推送优质技术文章，求关注~~~##
+## 如果觉得文章帮到你，不求打赏，喜欢我的文章可以关注我的微信公众号，将会定期推送优质技术文章，求关注~~~##
 
 ![欢迎关注“大话微信”公众号](http://upload-images.jianshu.io/upload_images/1956769-2f49dcb0dc5195b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##欢迎加入“大话安卓”技术交流群，一起分享，共同进步##
+## 欢迎加入“大话安卓”技术交流群，一起分享，共同进步##
 ![欢迎加入“大话安卓”技术交流群，互相学习提升](http://upload-images.jianshu.io/upload_images/1956769-326c166b86ed8e94.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 声明
