@@ -31,14 +31,12 @@
   - Vitamio 视频播放器框架
   
 ### 关于我
-  
-个人邮箱：xhb_199409@163.com
 
-[GitHub主页](https://github.com/xiaohaibin)
+* **Email**: <xhb_199409@163.com>
+* **Home**: <http://www.jxnk25.club>
+* **掘金**: <https://juejin.im/user/56fcba0a71cfe4005ca1a57b>
+* **简书**: <http://www.jianshu.com/users/42aed90cf5af/latest_articles>
 
-[简书主页](http://www.jianshu.com/users/42aed90cf5af/latest_articles)
-
-[个人博客](http://blog.csdn.net/jxnk25)
 
 ## 如果觉得文章帮到你，不求打赏，喜欢我的文章可以关注我的微信公众号，将会定期推送优质技术文章，求关注
 
