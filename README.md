@@ -23,12 +23,12 @@
 ### 技术要点  
   
   主要使用的第三方开源框架有：
-  - smarttablayout，主要使用在项目中Tab标签上
-  - butterknife 一键注解，一个非常好用的工具
-  - okHttp 网络加载框架
-  - ultra-ptr 下拉刷新框架
-  - Fresco 图片加载
-  - Vitamio 视频播放器框架
+  - Smarttablayout
+  - Butterknife
+  - OkHttp
+  - Ultra-ptr
+  - Fresco
+  - Vitamio
   
 ### 关于我
 
