@@ -23,12 +23,12 @@
 ### 技术要点  
   
   主要使用的第三方开源框架有：
-  - Smarttablayout
-  - Butterknife
-  - OkHttp
-  - Ultra-ptr
-  - Fresco
-  - Vitamio
+  - [Smarttablayout](https://github.com/ogaclejapan/SmartTabLayout)
+  - [Butterknife](https://github.com/JakeWharton/butterknife)
+  - [Volley](https://github.com/mcxiaoke/android-volley)
+  - [Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh)
+  - [Fresco](https://github.com/facebook/fresco)
+  - [Vitamio](https://github.com/yixia/VitamioBundle)
   
 ### 关于我
 
