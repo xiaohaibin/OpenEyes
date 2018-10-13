@@ -43,7 +43,10 @@
 ![欢迎关注“大话微信”公众号](http://upload-images.jianshu.io/upload_images/1956769-2f49dcb0dc5195b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 欢迎加入“大话安卓”技术交流群，一起分享，共同进步
-![欢迎加入“大话安卓”技术交流群，互相学习提升](http://upload-images.jianshu.io/upload_images/1956769-326c166b86ed8e94.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=fd2dfa72ecf84c5888ac5be49ea07eb39b2eea8aaae8baa0d3b99be1091f06b6"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="大话安卓" title="大话安卓"></a>
+
+或者手动加QQ群：688433795
 
 ### 声明
 
