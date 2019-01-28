@@ -1,4 +1,4 @@
-package com.stx.openeyes.base;
+package com.stx.openeyes;
 
 import android.app.Application;
 
@@ -6,13 +6,8 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.log.LoggerInterceptor;
 
-import org.xutils.x;
-
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
 
 import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
@@ -26,7 +21,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Fresco.initialize(this);
-        x.Ext.init(this);
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectionSpecs(Arrays.asList(
                         ConnectionSpec.MODERN_TLS,

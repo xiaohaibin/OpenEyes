@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import org.xutils.x;
 
 /**
  * Created by xhb on 2016/2/20.
@@ -165,18 +164,6 @@ public class ViewHolder {
     public ViewHolder setImageBitmap(int viewId,Bitmap bitmap){
         ImageView iv= getView(viewId);
         iv.setImageBitmap(bitmap);
-        return this;
-    }
-
-    /**
-     * 加载网络图片使用xutils
-     * @param viewId
-     * @param uri
-     * @return
-     */
-    public ViewHolder setImageURIWithXutils(int viewId,String uri){
-        ImageView iv= getView(viewId);
-        x.image().bind(iv,uri);
         return this;
     }
 

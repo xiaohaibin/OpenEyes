@@ -1,7 +1,6 @@
 package com.stx.openeyes.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.stx.openeyes.R;
 import com.stx.openeyes.model.HomePicEntity;
 

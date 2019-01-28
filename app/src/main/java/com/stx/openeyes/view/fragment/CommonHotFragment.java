@@ -2,7 +2,6 @@ package com.stx.openeyes.view.fragment;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -13,11 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
@@ -71,7 +65,7 @@ public class CommonHotFragment extends Fragment {
     private void initView() {
         //添加底部布局
         View view = LayoutInflater.from(getContext()).inflate(R.layout.list_footer, null);
-        hotListview.addFooterView(view,null,false);
+        hotListview.addFooterView(view, null, false);
     }
 
 
@@ -80,7 +74,7 @@ public class CommonHotFragment extends Fragment {
 
         //获取排行
         int position = FragmentPagerItem.getPosition(getArguments());
-        Log.i("---->position",position+"");
+        Log.i("---->position", position + "");
         String stretary = STRATEGY[position];
         //获取到排行请求地址
         String url = String.format(HttpAdress.HOT_STRATEGY, stretary);
@@ -123,11 +117,12 @@ public class CommonHotFragment extends Fragment {
                 } else {
                     minute = String.valueOf(mm);//分钟
                 }
-                    viewHolder.setText(R.id.tv_time, "#" + itemListEntity.getData().getCategory() + " / " + minute + "'" + second + '"');
-                ImageView imageView=viewHolder.getView(R.id.iv);
+                viewHolder.setText(R.id.tv_time, "#" + itemListEntity.getData().getCategory() + " / " + minute + "'" + second + '"');
+                ImageView imageView = viewHolder.getView(R.id.iv);
+                Log.i("====>image",itemListEntity.getData().getCover().getFeed());
                 Glide.with(mContext).load(itemListEntity.getData().getCover().getFeed()).into(imageView);
-                if (i[0]<dataEntity.size()) {
-                    viewHolder.setText(R.id.hot_tv_textnumber, ++i[0] +".");
+                if (i[0] < dataEntity.size()) {
+                    viewHolder.setText(R.id.hot_tv_textnumber, ++i[0] + ".");
                 }
             }
         });
@@ -149,9 +144,9 @@ public class CommonHotFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(getContext(), "单击事件", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getContext(), VideoDetailActivity.class);
-                Bundle bundle=new Bundle();
-                Log.i("--->",position+"");
+                Intent intent = new Intent(getContext(), VideoDetailActivity.class);
+                Bundle bundle = new Bundle();
+                Log.i("--->", position + "");
                 HotStraetgyEntity.ItemListEntity.DataEntity data = itemListEntities.get(position).getData();
                 bundle.putString("title", data.getTitle());
                 //获取到时间
@@ -170,14 +165,14 @@ public class CommonHotFragment extends Fragment {
                 } else {
                     minute = String.valueOf(mm);//分钟
                 }
-                bundle.putString("time", "#" + data.getCategory()+ " / " + minute + "'" + second + '"');
-                bundle.putString("desc",data.getDescription());//视频描述
-                bundle.putString("blurred",data.getCover().getBlurred());//模糊图片地址
-                bundle.putString("feed",data.getCover().getFeed());//图片地址
-                bundle.putString("video",data.getPlayUrl());//视频播放地址
-                bundle.putInt("collect",data.getConsumption().getCollectionCount());//收藏量
-                bundle.putInt("share",data.getConsumption().getShareCount());//分享量
-                bundle.putInt("reply",data.getConsumption().getReplyCount());//回复数量
+                bundle.putString("time", "#" + data.getCategory() + " / " + minute + "'" + second + '"');
+                bundle.putString("desc", data.getDescription());//视频描述
+                bundle.putString("blurred", data.getCover().getBlurred());//模糊图片地址
+                bundle.putString("feed", data.getCover().getFeed());//图片地址
+                bundle.putString("video", data.getPlayUrl());//视频播放地址
+                bundle.putInt("collect", data.getConsumption().getCollectionCount());//收藏量
+                bundle.putInt("share", data.getConsumption().getShareCount());//分享量
+                bundle.putInt("reply", data.getConsumption().getReplyCount());//回复数量
                 intent.putExtras(bundle);
                 startActivity(intent);
 

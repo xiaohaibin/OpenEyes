@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
 import com.stx.openeyes.utils.ToastUtil;
 import com.stx.openeyes.view.CustomTextView;
 import com.stx.openeyes.view.activity.FunctionActivity;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtil.setTranslucent(this);
         //获取控件
         ButterKnife.bind(this);
         //获取Fragment的管理器

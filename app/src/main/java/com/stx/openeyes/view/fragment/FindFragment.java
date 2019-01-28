@@ -1,7 +1,6 @@
 package com.stx.openeyes.view.fragment;
 
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,18 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.stx.openeyes.R;
 import com.stx.openeyes.model.FindMoreEntity;
 import com.stx.openeyes.utils.CommonAdapter;
 import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.utils.JsonParseUtils;
 import com.stx.openeyes.utils.ViewHolder;
-import com.stx.openeyes.view.activity.FindDetailActivity;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -62,10 +55,7 @@ public class FindFragment extends Fragment {
             findGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    FindMoreEntity entity = dataEntities.get(position);
-                    Intent intent=new Intent(getContext(),FindDetailActivity.class);
-                    intent.putExtra("name",entity.getName());
-                    startActivity(intent);
+
                 }
             });
     }

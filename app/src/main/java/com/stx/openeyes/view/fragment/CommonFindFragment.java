@@ -2,7 +2,6 @@ package com.stx.openeyes.view.fragment;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -14,11 +13,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.stx.openeyes.R;
@@ -47,7 +41,7 @@ public class CommonFindFragment extends Fragment {
     ListView findListview;
     private List<FindDetailEntity.ItemListEntity> itemListEntities = new ArrayList<>();
     private static final String[] RANK = new String[]{"date", "shareCount"};
-    private boolean isLoad=false;//判断是否在加载数据
+    private boolean isLoad = false;//判断是否在加载数据
     private String nextPageUrl;//下一页数据请求地址
     private CommonAdapter<FindDetailEntity.ItemListEntity> adapter;
     private View footview;
@@ -65,6 +59,7 @@ public class CommonFindFragment extends Fragment {
         setListener();
         return inflate;
     }
+
     //初始化控件
     private void initview() {
         //添加底部布局
@@ -84,7 +79,6 @@ public class CommonFindFragment extends Fragment {
 
     /**
      * 下载网络数据
-     *
      * @param url 网络请求地址
      */
     private void downloadData(String url) {
@@ -98,7 +92,8 @@ public class CommonFindFragment extends Fragment {
 
                     @Override
                     public void onResponse(String response, int id) {
-                      parseJson(response);
+                        Log.i("===>response", response);
+                        parseJson(response);
                     }
                 });
     }
@@ -127,12 +122,12 @@ public class CommonFindFragment extends Fragment {
                     minute = String.valueOf(mm);//分钟
                 }
                 viewHolder.setText(R.id.tv_time, "#" + itemListEntity.getData().getCategory() + " / " + minute + "'" + second + '"');
-                ImageView imageView=viewHolder.getView(R.id.iv);
+                ImageView imageView = viewHolder.getView(R.id.iv);
                 Glide.with(mContext).load(itemListEntity.getData().getCover().getFeed()).into(imageView);
             }
         };
         findListview.setAdapter(adapter);
-        if (adapter!=null){
+        if (adapter != null) {
             adapter.notifyDataSetChanged();
         }
     }
@@ -144,7 +139,7 @@ public class CommonFindFragment extends Fragment {
         isLoad = false;//数据下载完之后设置为false
         nextPageUrl = entity.getNextPageUrl();
         //如果下一页数据的请求地址为null，则加载底部布局
-        if (nextPageUrl==null){
+        if (nextPageUrl == null) {
             findListview.addFooterView(footview, null, false);
         }
         //设置适配器

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.jaeger.library.StatusBarUtil;
 import com.stx.openeyes.R;
 
 public class FunctionActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class FunctionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_function);
+        StatusBarUtil.setTranslucent(this);
         setToolBar();
     }
 

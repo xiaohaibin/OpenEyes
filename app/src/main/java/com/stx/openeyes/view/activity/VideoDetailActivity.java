@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.jaeger.library.StatusBarUtil;
 import com.stx.openeyes.R;
 import com.stx.openeyes.utils.NetConnectedUtils;
 import com.stx.openeyes.utils.ToastUtil;
@@ -57,15 +58,12 @@ public class VideoDetailActivity extends AppCompatActivity {
     TextView videoDetailTvDown;
     private String video;
     private String title;
-    //    @Bind(R.id.video_detail_viewpager)
-//    ViewPager videoDetailViewpager;
-    //保存Fragemnt集合
-//    private List<Fragment> fragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_detail);
+        StatusBarUtil.setTranslucent(this);
         ButterKnife.bind(this);
         initData();
     }
@@ -103,12 +101,7 @@ public class VideoDetailActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.video_paly://播放
                 if (NetConnectedUtils.isNetConnected(this)) {
-//                    Intent intent=new Intent(this,ShowVideoActivity.class);
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("video",video);
-//                    bundle.putString("title",title);
-//                    intent.putExtras(bundle);
-//                    startActivity(intent);
+                    VideoPlayActivity.start(VideoDetailActivity.this,title,video);
                 } else {
                     ToastUtil.showToast(this, "网络异常，请稍后再试");
                 }
