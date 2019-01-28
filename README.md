@@ -37,15 +37,11 @@
 * **简书**: <http://www.jianshu.com/users/42aed90cf5af/latest_articles>
 
 
-### 如果觉得文章帮到你，喜欢我的文章可以关注我的微信公众号，将会定期推送优质技术文章，求关注
+### Contract
 
-![欢迎关注“大话微信”公众号](http://upload-images.jianshu.io/upload_images/1956769-2f49dcb0dc5195b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[QQ群:271127803](http://qm.qq.com/cgi-bin/qm/qr?k=cM-ytK5bbZZZ4v7S1fMrTDzkjlFT0C9K)
 
-### 欢迎加入“大话安卓”技术交流群，一起分享，共同进步
-
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=fd2dfa72ecf84c5888ac5be49ea07eb39b2eea8aaae8baa0d3b99be1091f06b6"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="大话安卓" title="大话安卓"></a>
-
-或者手动加QQ群：688433795
+![欢迎关注“大话微信”公众号](http://upload-images.jianshu.io/upload_images/1956769-2f49dcb0dc5195b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
 
 ### 声明
 
