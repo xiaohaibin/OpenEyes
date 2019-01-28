@@ -4,11 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".view.fragment.CommonHotFragment">
+
     <ListView
         android:id="@+id/hot_listview"
-        android:scrollbars="none"
-        android:divider="@null"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:scrollbars="none" />
 
 </LinearLayout>

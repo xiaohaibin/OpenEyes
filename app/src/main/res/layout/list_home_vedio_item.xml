@@ -1,57 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="250dp">
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/iv"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="match_parent" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/iv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/ll_moban"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/boman_selector"
+        android:orientation="vertical">
 
-        <LinearLayout
-
-            android:id="@+id/ll_moban"
+        <RelativeLayout
+            android:id="@+id/rl_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/boman_selector"
-            android:orientation="vertical">
+            android:gravity="center">
 
-            <RelativeLayout
-                android:id="@+id/rl_text"
+            <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="测试"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:gravity="center"
-                    android:text="测试"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp" />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="动画  / 16'29"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_title"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="动画  / 16'29"
-                    android:textColor="@color/colorWhite" />
-            </RelativeLayout>
+    </LinearLayout>
 
-        </LinearLayout>
-
-
-    </FrameLayout>
-
-</LinearLayout>
+</FrameLayout>

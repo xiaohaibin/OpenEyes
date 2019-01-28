@@ -1,12 +1,12 @@
 package com.stx.openeyes.view.fragment;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,53 +15,40 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.stx.openeyes.R;
 import com.stx.openeyes.adapter.MyAdapter;
 import com.stx.openeyes.model.HomePicEntity;
 import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.view.activity.VideoDetailActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;
+import okhttp3.Call;
 
 
 /**
  * 每日精选
  */
 public class DailyFragment extends Fragment {
-    private static final String TAG = "TestActivity";
-    @Bind(R.id.lv_home)
+    @BindView(R.id.lv_home)
     ListView lvHome;
-    @Bind(R.id.ptr)
+    @BindView(R.id.ptr)
     PtrClassicFrameLayout ptr;
-
-
-    private String mResult;
     private Gson mGson;
-    private Context mContext;
-    private View llMoban;
-    private View rlText;
-    Handler mHandler = new Handler();
     private View mView;
     private String nextUrl;
     private MyAdapter mAdapter;
-    private RequestQueue mQueue;
     private boolean isRefresh;
     private boolean isRun;
-    private boolean cache;
-    private boolean isFirst = true;
 
 
     public DailyFragment() {
@@ -76,10 +63,6 @@ public class DailyFragment extends Fragment {
 
         ButterKnife.bind(this, mView);
 
-        findView();
-
-        init();
-
         setLvAdapter();
 
         downLoad(HttpAdress.DAILY);
@@ -90,15 +73,11 @@ public class DailyFragment extends Fragment {
     }
 
 
-    private void findView() {
-        rlText = mView.findViewById(R.id.rl_text);
-    }
 
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     public boolean canChildScrollUp() {
@@ -108,26 +87,21 @@ public class DailyFragment extends Fragment {
                 return absListView.getChildCount() > 0 &&
                         (absListView.getFirstVisiblePosition() > 0 ||
                                 absListView.getChildAt(0).getTop() < absListView.getPaddingTop());
-
             } else {
                 return ViewCompat.canScrollVertically(lvHome, -1) || lvHome.getScrollY() > 0;
             }
 
         } else {
-
             return ViewCompat.canScrollVertically(lvHome, -1);
-
         }
 
     }
 
 
     private void setListener() {
-
         ptr.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-
                 return !canChildScrollUp();
             }
 
@@ -135,8 +109,6 @@ public class DailyFragment extends Fragment {
             public void onRefreshBegin(PtrFrameLayout frame) {
                 isRefresh = true;
                 downLoad(HttpAdress.DAILY);
-
-
             }
         });
         //单个的点击事件
@@ -194,18 +166,6 @@ public class DailyFragment extends Fragment {
                         downLoad(nextUrl);
                     }
                 }
-
-                View c = lvHome.getChildAt(0);
-                if (c == null) {
-                    return;
-                }
-                int firstVisiblePosition = lvHome.getFirstVisiblePosition();
-                int top = c.getTop();
-                int height = -top + firstVisiblePosition * c.getHeight();
-
-                Log.i("===>" + TAG, "===height===>" + height);
-
-
             }
         });
 
@@ -215,23 +175,32 @@ public class DailyFragment extends Fragment {
     List<HomePicEntity.IssueListEntity.ItemListEntity> listAll = new ArrayList<>();
 
     private void downLoad(final String url) {
-
-        final StringRequest request = new StringRequest(
-                url,
-                new Response.Listener<String>() {
+        if (TextUtils.isEmpty(url)){
+            return;
+        }
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onError(Call call, Exception e, int id) {
+                        Log.i("===error",e.getMessage());
+                        isRun = false;
+                        if (isRefresh) {
+                            ptr.refreshComplete();
+
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Log.i("===json",response);
                         mGson = new Gson();
                         HomePicEntity homePicEntity = mGson.fromJson(response, HomePicEntity.class);
                         List<HomePicEntity.IssueListEntity> issueList = homePicEntity.getIssueList();
                         HomePicEntity.IssueListEntity issueListEntity = issueList.get(0);
                         List<HomePicEntity.IssueListEntity.ItemListEntity> itemList = issueListEntity.getItemList();
-                        HomePicEntity.IssueListEntity issueListEntity2 = issueList.get(1);
-                        List<HomePicEntity.IssueListEntity.ItemListEntity> itemList1 = issueListEntity2.getItemList();
-                        Log.i("===>" + TAG, "===完成===>");
-
                         isRun = false;
-
                         //刷新需要清除数据
                         if (isRefresh) {
                             listAll.removeAll(listAll);
@@ -240,57 +209,22 @@ public class DailyFragment extends Fragment {
                         }
 
                         listAll.addAll(itemList);
-                        listAll.addAll(itemList1);
-
                         nextUrl = homePicEntity.getNextPageUrl();
-
                         myNotify();
-
-
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("===>" + TAG, "===w失败===>");
-                        isRun = false;
-                        if (isRefresh) {
-                            ptr.refreshComplete();
-
-                        }
-
-
-                    }
-                }
-        );
-
-
-        mQueue.add(request);
-        mQueue.start();
-
-
+                });
     }
 
 
     public void myNotify() {
-
-        if (mAdapter != null)
+        if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
-
+        }
     }
-
 
     private void setLvAdapter() {
-
-        mAdapter = new MyAdapter(mContext, listAll);
+        mAdapter = new MyAdapter(getContext(), listAll);
         lvHome.setAdapter(mAdapter);
-
     }
-
-    private void init() {
-        mContext = getContext();
-        mQueue = Volley.newRequestQueue(mContext);
-    }
-
 
 }

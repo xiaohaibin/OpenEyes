@@ -19,7 +19,7 @@ import com.stx.openeyes.view.fragment.DailyFragment;
 import com.stx.openeyes.view.fragment.FindFragment;
 import com.stx.openeyes.view.fragment.HotFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -27,19 +27,19 @@ import butterknife.OnClick;
  * 主界面
  */
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.main_toolbar)
+    @BindView(R.id.main_toolbar)
     Toolbar mainToolbar;
-    @Bind(R.id.main_toolbar_tv_time)
+    @BindView(R.id.main_toolbar_tv_time)
     CustomTextView mainToolbarTvTime;
-    @Bind(R.id.main_toolbar_iv_right)
+    @BindView(R.id.main_toolbar_iv_right)
     ImageButton mainToolbarIvRight;
-    @Bind(R.id.tv_daily)
+    @BindView(R.id.tv_daily)
     TextView tvDaily;
-    @Bind(R.id.tv_find)
+    @BindView(R.id.tv_find)
     TextView tvFind;
-    @Bind(R.id.tv_hot)
+    @BindView(R.id.tv_hot)
     TextView tvHot;
-    @Bind(R.id.main_menu)
+    @BindView(R.id.main_menu)
     LinearLayout mainMenu;
     private FragmentTransaction transaction;
     private FindFragment findFragment;

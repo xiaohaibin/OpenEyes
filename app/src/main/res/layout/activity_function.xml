@@ -11,32 +11,34 @@
         android:id="@+id/tb_function"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.stx.openeyes.view.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorBlack"
             android:layout_gravity="center"
-            android:text="Eyepetizer"/>
+            android:text="Eyepetizer"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <ImageButton
             android:id="@+id/main_toolbar_iv_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:background="@null"
-            android:src="@drawable/main_toolbar_eye_selector"/>
+            android:src="@drawable/main_toolbar_eye_selector" />
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:alpha="0.5"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:alpha="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="100dp"
@@ -50,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
+
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"

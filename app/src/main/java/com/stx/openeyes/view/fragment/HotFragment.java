@@ -16,7 +16,7 @@ import com.stx.openeyes.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -26,9 +26,9 @@ public class HotFragment extends Fragment {
     //标题
     private static final String[] TITLE = new String[]{"周排行", "月排行", "总排行"};
 
-    @Bind(R.id.hot_viewpager)
+    @BindView(R.id.hot_viewpager)
     ViewPager hotViewpager;
-    @Bind(R.id.viewpagertab)
+    @BindView(R.id.viewpagertab)
     SmartTabLayout viewpagertab;
     private List<Fragment> fragments = new ArrayList<>();
 
@@ -79,6 +79,5 @@ public class HotFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

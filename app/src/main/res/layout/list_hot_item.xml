@@ -1,83 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="250dp">
 
-    <FrameLayout
+
+    <ImageView
+        android:id="@+id/iv"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="match_parent" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/iv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/ll_moban"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/boman_selector"
+        android:orientation="vertical">
 
-        <LinearLayout
-
-            android:id="@+id/ll_moban"
+        <RelativeLayout
+            android:id="@+id/rl_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/boman_selector"
-            android:orientation="vertical">
+            android:gravity="center">
 
-            <RelativeLayout
-                android:id="@+id/rl_text"
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:text="测试"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="测试"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="动画  / 16'29"
+                android:textColor="@color/colorWhite" />
 
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_title"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="动画  / 16'29"
-                    android:textColor="@color/colorWhite" />
-                <ImageView
-                    android:id="@+id/hot_iv_textup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_time"
-                    android:layout_marginTop="10dp"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/abc_textfield_search_activated_mtrl_alpha"/>
-                <com.stx.openeyes.view.CustomTextView
-                    android:id="@+id/hot_tv_textnumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12sp"
-                    android:layout_below="@id/hot_iv_textup"
-                    android:textColor="@color/colorWhite"
-                    android:text="6."/>
-                <ImageView
-                    android:id="@+id/hot_iv_textdown"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/abc_textfield_search_activated_mtrl_alpha"
-                    android:layout_below="@+id/hot_tv_textnumber"
-                    android:layout_alignLeft="@+id/hot_iv_textup"
-                    android:layout_alignStart="@+id/hot_iv_textup" />
-            </RelativeLayout>
+            <ImageView
+                android:id="@+id/hot_iv_textup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_time"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/abc_textfield_search_activated_mtrl_alpha" />
 
-        </LinearLayout>
+            <com.stx.openeyes.view.CustomTextView
+                android:id="@+id/hot_tv_textnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_iv_textup"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:text="6."
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
 
+            <ImageView
+                android:id="@+id/hot_iv_textdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hot_tv_textnumber"
+                android:layout_alignStart="@+id/hot_iv_textup"
+                android:layout_alignLeft="@+id/hot_iv_textup"
+                android:background="@drawable/abc_textfield_search_activated_mtrl_alpha" />
+        </RelativeLayout>
 
-    </FrameLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

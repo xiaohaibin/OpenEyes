@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.android.volley.RequestQueue;
@@ -18,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.stx.openeyes.R;
 import com.stx.openeyes.model.FindDetailEntity;
@@ -25,21 +27,23 @@ import com.stx.openeyes.utils.CommonAdapter;
 import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.utils.ViewHolder;
 import com.stx.openeyes.view.activity.VideoDetailActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 
 /**
  * 发现更多 通用fragment
  */
 public class CommonFindFragment extends Fragment {
 
-
-    @Bind(R.id.find_listview)
+    @BindView(R.id.find_listview)
     ListView findListview;
     private List<FindDetailEntity.ItemListEntity> itemListEntities = new ArrayList<>();
     private static final String[] RANK = new String[]{"date", "shareCount"};
@@ -84,22 +88,19 @@ public class CommonFindFragment extends Fragment {
      * @param url 网络请求地址
      */
     private void downloadData(String url) {
+        OkHttpUtils.get().url(url)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        //下载json数据
-        StringRequest request = new StringRequest(url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                parseJson(response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                    }
 
-            }
-        });
-        requestQueue.add(request);
-        requestQueue.start();
+                    @Override
+                    public void onResponse(String response, int id) {
+                      parseJson(response);
+                    }
+                });
     }
 
     //设置适配器
@@ -126,7 +127,8 @@ public class CommonFindFragment extends Fragment {
                     minute = String.valueOf(mm);//分钟
                 }
                 viewHolder.setText(R.id.tv_time, "#" + itemListEntity.getData().getCategory() + " / " + minute + "'" + second + '"');
-                viewHolder.setImageResourcewithFresco(R.id.iv, Uri.parse(itemListEntity.getData().getCover().getFeed()));
+                ImageView imageView=viewHolder.getView(R.id.iv);
+                Glide.with(mContext).load(itemListEntity.getData().getCover().getFeed()).into(imageView);
             }
         };
         findListview.setAdapter(adapter);
@@ -155,8 +157,6 @@ public class CommonFindFragment extends Fragment {
         findListview.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-
             }
 
             @Override
@@ -211,6 +211,5 @@ public class CommonFindFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

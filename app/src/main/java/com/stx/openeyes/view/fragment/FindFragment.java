@@ -23,12 +23,15 @@ import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.utils.JsonParseUtils;
 import com.stx.openeyes.utils.ViewHolder;
 import com.stx.openeyes.view.activity.FindDetailActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 
 /**
  * 发现更多
@@ -36,7 +39,7 @@ import butterknife.ButterKnife;
 public class FindFragment extends Fragment {
 
 
-    @Bind(R.id.find_grid)
+    @BindView(R.id.find_grid)
     GridView findGrid;
     private List<FindMoreEntity> dataEntities=new ArrayList<>();
     private View view;
@@ -69,21 +72,20 @@ public class FindFragment extends Fragment {
 
     //初始化数据
     private void initData() {
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        //下载json数据
-        StringRequest request = new StringRequest(HttpAdress.FIND_MORE, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                   parseJson(response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+        OkHttpUtils.get()
+                .url(HttpAdress.FIND_MORE)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
 
-            }
-        });
-        requestQueue.add(request);
-        requestQueue.start();
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        parseJson(response);
+                    }
+                });
     }
 
     //设置适配器
@@ -107,6 +109,5 @@ public class FindFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

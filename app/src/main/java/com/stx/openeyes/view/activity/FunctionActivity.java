@@ -17,10 +17,7 @@ public class FunctionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_function);
         setToolBar();
-
     }
-
-
 
     private void setToolBar() {
         Toolbar tb = (Toolbar) findViewById(R.id.tb_function);

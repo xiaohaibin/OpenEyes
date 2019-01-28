@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.android.volley.RequestQueue;
@@ -17,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 import com.stx.openeyes.R;
@@ -25,12 +27,15 @@ import com.stx.openeyes.utils.CommonAdapter;
 import com.stx.openeyes.utils.HttpAdress;
 import com.stx.openeyes.utils.ViewHolder;
 import com.stx.openeyes.view.activity.VideoDetailActivity;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 
 /**
  * 热门排行的通用fragment
@@ -38,7 +43,7 @@ import butterknife.ButterKnife;
 public class CommonHotFragment extends Fragment {
 
     private List<HotStraetgyEntity.ItemListEntity> itemListEntities = new ArrayList<>();
-    @Bind(R.id.hot_listview)
+    @BindView(R.id.hot_listview)
     ListView hotListview;
     //排行 周排行 月排行 总排行
     private static final String[] STRATEGY = new String[]{
@@ -79,20 +84,20 @@ public class CommonHotFragment extends Fragment {
         String stretary = STRATEGY[position];
         //获取到排行请求地址
         String url = String.format(HttpAdress.HOT_STRATEGY, stretary);
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        StringRequest request = new StringRequest(url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                pareJson(response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
 
-            }
-        });
-        requestQueue.add(request);
-        requestQueue.start();
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        pareJson(response);
+                    }
+                });
     }
 
     //设置适配器
@@ -119,8 +124,8 @@ public class CommonHotFragment extends Fragment {
                     minute = String.valueOf(mm);//分钟
                 }
                     viewHolder.setText(R.id.tv_time, "#" + itemListEntity.getData().getCategory() + " / " + minute + "'" + second + '"');
-                    viewHolder.setImageResourcewithFresco(R.id.iv, Uri.parse(itemListEntity.getData().getCover().getFeed()));
-
+                ImageView imageView=viewHolder.getView(R.id.iv);
+                Glide.with(mContext).load(itemListEntity.getData().getCover().getFeed()).into(imageView);
                 if (i[0]<dataEntity.size()) {
                     viewHolder.setText(R.id.hot_tv_textnumber, ++i[0] +".");
                 }
@@ -204,6 +209,5 @@ public class CommonHotFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

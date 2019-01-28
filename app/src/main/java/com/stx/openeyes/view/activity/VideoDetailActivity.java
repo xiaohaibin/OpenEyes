@@ -1,6 +1,5 @@
 package com.stx.openeyes.view.activity;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import com.stx.openeyes.R;
 import com.stx.openeyes.utils.NetConnectedUtils;
 import com.stx.openeyes.utils.ToastUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -24,37 +23,37 @@ import butterknife.OnClick;
  */
 public class VideoDetailActivity extends AppCompatActivity {
 
-    @Bind(R.id.video_toolbar_iv_right)
+    @BindView(R.id.video_toolbar_iv_right)
     ImageButton videoToolbarIvRight;
-    @Bind(R.id.video_toolbar)
+    @BindView(R.id.video_toolbar)
     Toolbar videoToolbar;
-    @Bind(R.id.video_detail_iv)
+    @BindView(R.id.video_detail_iv)
     SimpleDraweeView videoDetailIv;
-    @Bind(R.id.video_paly)
+    @BindView(R.id.video_paly)
     ImageView videoPaly;
-    @Bind(R.id.video_detail_ivmo)
+    @BindView(R.id.video_detail_ivmo)
     SimpleDraweeView videoDetailIvmo;
-    @Bind(R.id.video_detail_title)
+    @BindView(R.id.video_detail_title)
     TextView videoDetailTitle;
-    @Bind(R.id.video_detail_time)
+    @BindView(R.id.video_detail_time)
     TextView videoDetailTime;
-    @Bind(R.id.video_detail_desc)
+    @BindView(R.id.video_detail_desc)
     TextView videoDetailDesc;
-    @Bind(R.id.video_detail_iv_fav)
+    @BindView(R.id.video_detail_iv_fav)
     ImageView videoDetailIvFav;
-    @Bind(R.id.video_detail_tv_fav)
+    @BindView(R.id.video_detail_tv_fav)
     TextView videoDetailTvFav;
-    @Bind(R.id.video_detail_iv_share)
+    @BindView(R.id.video_detail_iv_share)
     ImageView videoDetailIvShare;
-    @Bind(R.id.video_detail_tv_share)
+    @BindView(R.id.video_detail_tv_share)
     TextView videoDetailTvShare;
-    @Bind(R.id.video_detail_iv_reply)
+    @BindView(R.id.video_detail_iv_reply)
     ImageView videoDetailIvReply;
-    @Bind(R.id.video_detail_tv_reply)
+    @BindView(R.id.video_detail_tv_reply)
     TextView videoDetailTvReply;
-    @Bind(R.id.video_detail_iv_down)
+    @BindView(R.id.video_detail_iv_down)
     ImageView videoDetailIvDown;
-    @Bind(R.id.video_detail_tv_down)
+    @BindView(R.id.video_detail_tv_down)
     TextView videoDetailTvDown;
     private String video;
     private String title;
@@ -104,14 +103,14 @@ public class VideoDetailActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.video_paly://播放
                 if (NetConnectedUtils.isNetConnected(this)) {
-                    Intent intent=new Intent(this,ShowVideoActivity.class);
-                    Bundle bundle=new Bundle();
-                    bundle.putString("video",video);
-                    bundle.putString("title",title);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }else {
-                    ToastUtil.showToast(this,"网络异常，请稍后再试");
+//                    Intent intent=new Intent(this,ShowVideoActivity.class);
+//                    Bundle bundle=new Bundle();
+//                    bundle.putString("video",video);
+//                    bundle.putString("title",title);
+//                    intent.putExtras(bundle);
+//                    startActivity(intent);
+                } else {
+                    ToastUtil.showToast(this, "网络异常，请稍后再试");
                 }
                 break;
             case R.id.video_detail_iv_fav://收藏
@@ -121,6 +120,8 @@ public class VideoDetailActivity extends AppCompatActivity {
             case R.id.video_detail_iv_reply://评论
                 break;
             case R.id.video_detail_iv_down://下载
+                break;
+            default:
                 break;
         }
     }

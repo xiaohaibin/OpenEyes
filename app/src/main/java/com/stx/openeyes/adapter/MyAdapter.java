@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.stx.openeyes.R;
 import com.stx.openeyes.model.HomePicEntity;
@@ -40,8 +41,6 @@ public class MyAdapter extends BaseAdapter {
         if ("video".equals(itemListEntity.getType())) {
             return VIDEO;
         }
-
-
         return TEXT;
     }
 
@@ -67,14 +66,13 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         HomePicEntity.IssueListEntity.ItemListEntity itemListEntity = mItemList.get(position);
-
         int type = getItemViewType(position);
 
-        String feed = "1";
-        String title = "1";
-        String category = "1";
-        int duration = 0;
-        String text = "1";
+        String feed;
+        String title;
+        String category;
+        int duration;
+        String text;
 
 
         mHolder = new ViewHolder();
@@ -88,7 +86,6 @@ public class MyAdapter extends BaseAdapter {
                 title = itemListEntity.getData().getTitle();
                 category = itemListEntity.getData().getCategory();
                 category = "#" + category + "  /  ";
-
                 duration = itemListEntity.getData().getDuration();
 
                 int last = duration % 60;
@@ -98,75 +95,49 @@ public class MyAdapter extends BaseAdapter {
                 } else {
                     stringLast = last + "";
                 }
-
                 String durationString;
                 int minit = duration / 60;
                 if (minit < 10) {
                     durationString = "0" + minit;
-
                 } else {
                     durationString = "" + minit;
-
                 }
                 String stringTime = durationString + "' " + stringLast + '"';
 
                 //设置布局
-                View view = LayoutInflater.from(mContext).inflate(R.layout.list_home_vedio_item, parent, false);
-                convertView = view;
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.list_home_vedio_item, parent, false);
                 if (convertView == null) {
-                    mHolder.imageView = (ImageView) convertView.findViewById(R.id.iv);
-                    mHolder.tvTitle = (TextView) convertView.findViewById(R.id.tv_title);
-                    mHolder.tvTime = (TextView) convertView.findViewById(R.id.tv_time);
-
+                    mHolder.imageView = convertView.findViewById(R.id.iv);
+                    mHolder.tvTitle = convertView.findViewById(R.id.tv_title);
+                    mHolder.tvTime = convertView.findViewById(R.id.tv_time);
                     convertView.setTag(mHolder);
-
                 } else {
                     if (convertView.getTag() instanceof ViewHolder) {
-
                         mHolder = (ViewHolder) convertView.getTag();
-
                     } else {
-                        convertView = view;
-                        mHolder.imageView = (ImageView) convertView.findViewById(R.id.iv);
-                        mHolder.tvTitle = (TextView) convertView.findViewById(R.id.tv_title);
-                        mHolder.tvTime = (TextView) convertView.findViewById(R.id.tv_time);
-
+                        mHolder.imageView = convertView.findViewById(R.id.iv);
+                        mHolder.tvTitle = convertView.findViewById(R.id.tv_title);
+                        mHolder.tvTime = convertView.findViewById(R.id.tv_time);
                         convertView.setTag(mHolder);
-
                     }
                 }
-
-
                 //set data
-
-                Uri uri = Uri.parse(feed);
-                SimpleDraweeView draweeView = (SimpleDraweeView) convertView.findViewById(R.id.iv);
-                draweeView.setImageURI(uri);
-
-
+                Glide.with(mContext).load(feed).into(mHolder.imageView);
                 mHolder.tvTitle.setText(title);
-                mHolder.tvTime.setText(category + stringTime);
-
-
+                mHolder.tvTime.setText(String.valueOf(category + stringTime));
                 return convertView;
 
             case TEXT:
-
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.list_home_text_item, parent, false);
-                TextView textView = (TextView) convertView.findViewById(R.id.tv_home_text);
-
+                TextView textView = convertView.findViewById(R.id.tv_home_text);
                 //set data
                 text = itemListEntity.getData().getText();
                 textView.setText(text);
-
                 String image = mItemList.get(position).getData().getImage();
-
                 if (!TextUtils.isEmpty(image)) {
                     textView.setTextSize(20);
                     textView.setText("-Weekend  special-");
                 }
-
-
                 return convertView;
             default:
                 return null;
@@ -178,11 +149,9 @@ public class MyAdapter extends BaseAdapter {
         ImageView imageView;
         TextView tvTitle;
         TextView tvTime;
-
     }
 
     static class ViewHolder2 {
         TextView tvTime;
-
     }
 }

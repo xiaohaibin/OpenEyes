@@ -1,5 +1,6 @@
 package com.stx.openeyes.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
@@ -10,6 +11,7 @@ import android.widget.TextView;
  * Created by xhb on 2016/2/29.
  * 自定义TextView
  */
+@SuppressLint("AppCompatCustomView")
 public class CustomTextView extends TextView {
     public CustomTextView(Context context) {
         super(context);
