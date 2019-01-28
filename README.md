@@ -1,8 +1,6 @@
 ## OpenEyes
 仿照[开眼视频]客户端做的一个App，每天更新一个精美短视频应用，一个非常美的视频应用，界面基本上是参照开眼视频官方版本来做的。
-在该项目中，我采用的是Vitamio的视频播放器框架，还是比较强大的，亲测，与开眼官方版本的视频播放器加载速度要快一些。
-在我的github和简书博客上都有Vitamio的教程，传送门[VitamioDemo地址](https://github.com/xiaohaibin/VitamioDemo)
-  
+
 ### 主要分为三大板块：
   
   【每日精选】
@@ -25,10 +23,11 @@
   主要使用的第三方开源框架有：
   - [Smarttablayout](https://github.com/ogaclejapan/SmartTabLayout)
   - [Butterknife](https://github.com/JakeWharton/butterknife)
-  - [Volley](https://github.com/mcxiaoke/android-volley)
+  - [OkhttpUtils](https://github.com/hongyangAndroid/okhttputils)
   - [Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh)
   - [Fresco](https://github.com/facebook/fresco)
-  - [Vitamio](https://github.com/yixia/VitamioBundle)
+  - [Glide](https://github.com/bumptech/glide)
+  - [GSYVideoPlayer](https://github.com/CarGuo/GSYVideoPlayer)
   
 ### 关于我
 
