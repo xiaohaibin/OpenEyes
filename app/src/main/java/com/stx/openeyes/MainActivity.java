@@ -89,11 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 底部菜单栏的点击切换
-     *
      * @param currenItem
      */
     private void setChocie(int currenItem) {
-
         transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
         clearChioce();
@@ -131,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
                     transaction.show(hotFragment);
                 }
                 break;
+            default:
+                break;
         }
         //提交事务
         transaction.commit();
@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 隐藏所有的Fragment，避免fragment混乱
-     *
      * @param transaction
      */
     private void hideFragments(FragmentTransaction transaction) {

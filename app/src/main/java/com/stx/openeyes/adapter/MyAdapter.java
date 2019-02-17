@@ -24,7 +24,6 @@ public class MyAdapter extends BaseAdapter {
     public static final int TEXT = 2;
     private Context mContext;
     List<HomePicEntity.IssueListEntity.ItemListEntity> mItemList;
-    private View rlText;
 
 
     public MyAdapter(Context mContext, List<HomePicEntity.IssueListEntity.ItemListEntity> itemList) {
